@@ -1,8 +1,6 @@
 class IRCModule
 	def notify message
-		if @filter.nil? or message.body =~ @filter
-			process message
-		end
+		process message if @filter.nil? or message.body =~ @filter
 	end
 
 	def process message
